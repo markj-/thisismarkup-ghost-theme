@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "styles/style.css"}}" />
+
+    <script>
+
+      (function() {
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-30975281-1']);
+        _gaq.push(['_trackPageview']);
+
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+  </head>
+  <body>
+
+    <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+    <div class="container">
+
+      <header class="header" role="banner">
+        <a href="{{@blog.url}}" title="Return to Home page"><h1 class="ir">this is markup</h1></a>
+      </header>
+
+      {{{body}}}
+
+      <footer class="footer" role="contentinfo">
+        <small>Copyright &copy; {{date format="YYYY"}}. All rights reserved.</small>
+        <ul>
+          <li><a href="http://www.twitter.com/mark_jones" class="twitter ir">Twitter</a></li>
+          <li><a href="http://www.last.fm/user/mjswerve" class="lastfm ir">Last Fm</a></li>
+          <li><a href="mailto:&#109;&#097;&#114;&#107;&#064;&#116;&#104;&#105;&#115;&#105;&#115;&#109;&#097;&#114;&#107;&#117;&#112;&#046;&#099;&#111;&#046;&#117;&#107;" class="email ir">Email</a></li>
+        </ul>
+      </footer>
+
+    </div>
+
+    <script src="{{asset "scripts/prettify.min.js"}}"></script>
+    <script>
+      (function() {
+        var codeBlocks = document.getElementsByClassName( 'prettyprint' );
+        if ( codeBlocks.length ) {
+          prettyPrint();
+        }
+      })();
+    </script>
+
+  </body>
+</html>

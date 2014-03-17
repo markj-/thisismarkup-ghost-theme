@@ -1,0 +1,11 @@
+{{!< default}}
+      <main class="main blog" role="main">
+        <ul>
+          {{#foreach posts}}
+          <li>
+            <a href="{{url}}">{{title}}</a>
+            <small>posted on <time datetime="{{date format='YYYY-MM-DD'}}" pubdate>{{date format="Do MMMM YYYY"}}</time></small>
+          </li>
+          {{/foreach}}
+        </ul>
+      </main>
